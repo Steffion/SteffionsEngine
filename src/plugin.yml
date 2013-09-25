@@ -1,0 +1,12 @@
+name: SteffionsEngine
+main: nl.Steffion.SteffionsEngine.SteffionsEngine
+version: 1.0.0
+authors:
+  - Steffion
+description: Description here.
+commands:
+  SteffionsEngine:
+    usage: /<command>
+    description: N/A
+    aliases:
+        - se
