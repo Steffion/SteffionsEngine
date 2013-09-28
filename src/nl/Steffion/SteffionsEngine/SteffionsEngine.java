@@ -1,5 +1,6 @@
 package nl.Steffion.SteffionsEngine;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,10 +13,14 @@ import nl.Steffion.SteffionsEngine.Managers.PermissionsM;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.InvalidConfigurationException;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.mcstats.Metrics;
 
 public class SteffionsEngine extends JavaPlugin implements Listener {
 	/**
@@ -96,6 +101,26 @@ public class SteffionsEngine extends JavaPlugin implements Listener {
 				SteffionsEngineCMD, new CMDinfo(), "/SteffionsEngine test5");
 
 		getServer().getPluginManager().registerEvents(this, this);
+
+		try {
+			Metrics metrics = new Metrics(this);
+			metrics.start();
+			FileConfiguration metrics_fc = new YamlConfiguration();
+			metrics_fc.load(metrics.getConfigFile());
+			if (!metrics_fc.getBoolean("opt-out", false)) {
+				MessageM.sendMessage(null,
+						"%TAG%NSending %AMCStats %Nto their server.");
+			} else {
+				MessageM.sendMessage(null,
+						"%TAG%EUnable to send %AMCStats %Eto their server. %AMCStats%E is disabled?");
+			}
+		} catch (IOException e) {
+			MessageM.sendMessage(null,
+					"%TAG%EUnable to send %AMCStats %Eto their server. Something went wrong ;(!");
+		} catch (InvalidConfigurationException e) {
+			MessageM.sendMessage(null,
+					"%TAG%EUnable to send %AMCStats %Eto their server. Something went wrong ;(!");
+		}
 
 		MessageM.sendFMessage(null, ConfigC.log_enabledPlugin, "name-"
 				+ SteffionsEngine.pdfFile.getName(), "version-"
