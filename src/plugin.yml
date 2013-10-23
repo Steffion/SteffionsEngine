@@ -1,0 +1,12 @@
+name: PLUGINNAME
+main: nl.Steffion.PLUGINNAME.PLUGINNAME
+version: 1.0.0
+authors:
+  - Steffion
+description: Description here.
+commands:
+  PLUGINNAME:
+    usage: /<command>
+    description: N/A
+    aliases:
+        - pn
