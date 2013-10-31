@@ -2,7 +2,8 @@ package nl.Steffion.PLUGINNAME.Commands;
 
 import nl.Steffion.PLUGINNAME.ConfigC;
 import nl.Steffion.PLUGINNAME.PLUGINNAME;
-import nl.Steffion.SteffionsEngine.Managers.MessageM;
+import nl.Steffion.PLUGINNAME.CommandsC.Commands;
+import nl.Steffion.PLUGINNAME.SteffionsEngine.Managers.MessageM;
 
 import org.bukkit.command.Command;
 import org.bukkit.entity.Player;
@@ -31,7 +32,7 @@ public class CMDinfo extends DefaultCMD {
 		MessageM.sendMessage(player, "%NVersion: %A%version%%N.", "version-"
 				+ PLUGINNAME.pdfFile.getVersion());
 		MessageM.sendMessage(player, "%NType %A%helpusage% %Nfor help.",
-				"helpusage-" + PLUGINNAME.CMDhelp.usage);
+				"helpusage-" + Commands.PLUGINNAME_HELP.usage);
 		MessageM.sendFMessage(player, ConfigC.chat_headerhigh,
 				"header-&oInfo Page");
 		return true;

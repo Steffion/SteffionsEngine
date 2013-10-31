@@ -1,12 +1,11 @@
 package nl.Steffion.PLUGINNAME.Commands;
 
+import nl.Steffion.PLUGINNAME.CommandsC.Commands;
 import nl.Steffion.PLUGINNAME.ConfigC;
 import nl.Steffion.PLUGINNAME.PLUGINNAME;
 import nl.Steffion.PLUGINNAME.W;
-import nl.Steffion.SteffionsEngine.EW;
-import nl.Steffion.SteffionsEngine.Managers.CommandM;
-import nl.Steffion.SteffionsEngine.Managers.MessageM;
-import nl.Steffion.SteffionsEngine.Managers.PermissionsM;
+import nl.Steffion.PLUGINNAME.SteffionsEngine.Managers.MessageM;
+import nl.Steffion.PLUGINNAME.SteffionsEngine.Managers.PermissionsM;
 
 import org.bukkit.command.Command;
 import org.bukkit.entity.Player;
@@ -28,7 +27,7 @@ public class CMDhelp extends DefaultCMD {
 	public boolean exectue(Player player, Command cmd, String label,
 			String[] args) {
 		int amountCommands = 0;
-		for (CommandM command : EW.commands) {
+		for (Commands command : Commands.values()) {
 			if (command.usage != null) {
 				amountCommands = amountCommands + 1;
 			}
@@ -45,7 +44,7 @@ public class CMDhelp extends DefaultCMD {
 					+ PLUGINNAME.pdfFile.getName() + " %Nhelp page %A" + page
 					+ "%N/%A" + maxPages);
 			int i = 1;
-			for (CommandM command : EW.commands) {
+			for (Commands command : Commands.values()) {
 				if (i <= 4) {
 					if (command.usage != null) {
 						if (PermissionsM.hasPerm(player, command.permission,
@@ -90,7 +89,7 @@ public class CMDhelp extends DefaultCMD {
 					+ "%N/%A" + maxPages);
 
 			int i = 1;
-			for (CommandM command : EW.commands) {
+			for (Commands command : Commands.values()) {
 				if (i <= (page * 4) + 4) {
 					if (command.usage != null) {
 						if (i >= ((page - 1) * 4) + 1
@@ -118,6 +117,7 @@ public class CMDhelp extends DefaultCMD {
 					}
 				}
 			}
+
 			MessageM.sendFMessage(player, ConfigC.chat_headerhigh,
 					"header-&oHelp Page");
 		}
