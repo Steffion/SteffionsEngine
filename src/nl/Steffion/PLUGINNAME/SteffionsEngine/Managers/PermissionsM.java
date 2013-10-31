@@ -1,4 +1,4 @@
-package nl.Steffion.SteffionsEngine.Managers;
+package nl.Steffion.PLUGINNAME.SteffionsEngine.Managers;
 
 import nl.Steffion.PLUGINNAME.ConfigC;
 import nl.Steffion.PLUGINNAME.PermissionsC;

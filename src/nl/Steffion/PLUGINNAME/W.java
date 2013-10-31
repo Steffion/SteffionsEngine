@@ -1,6 +1,6 @@
 package nl.Steffion.PLUGINNAME;
 
-import nl.Steffion.SteffionsEngine.Managers.ConfigM;
+import nl.Steffion.PLUGINNAME.SteffionsEngine.Managers.ConfigM;
 
 public class W {
 	/**

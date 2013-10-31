@@ -2,8 +2,8 @@ package nl.Steffion.PLUGINNAME.Commands;
 
 import nl.Steffion.PLUGINNAME.ConfigC;
 import nl.Steffion.PLUGINNAME.W;
-import nl.Steffion.SteffionsEngine.Managers.ConfigM;
-import nl.Steffion.SteffionsEngine.Managers.MessageM;
+import nl.Steffion.PLUGINNAME.SteffionsEngine.Managers.ConfigM;
+import nl.Steffion.PLUGINNAME.SteffionsEngine.Managers.MessageM;
 
 import org.bukkit.command.Command;
 import org.bukkit.entity.Player;

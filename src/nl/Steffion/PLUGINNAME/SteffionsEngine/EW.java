@@ -1,8 +1,6 @@
-package nl.Steffion.SteffionsEngine;
+package nl.Steffion.PLUGINNAME.SteffionsEngine;
 
 import java.util.ArrayList;
-
-import nl.Steffion.SteffionsEngine.Managers.CommandM;
 
 public class EW {
 	/**
@@ -25,5 +23,4 @@ public class EW {
 	 * Standard stuff.
 	 */
 	public static ArrayList<String> newFiles = new ArrayList<String>();
-	public static ArrayList<CommandM> commands = new ArrayList<CommandM>();
 }

@@ -1,10 +1,10 @@
-package nl.Steffion.SteffionsEngine.Managers;
+package nl.Steffion.PLUGINNAME.SteffionsEngine.Managers;
 
 import java.io.File;
 
 import nl.Steffion.PLUGINNAME.ConfigC;
 import nl.Steffion.PLUGINNAME.PLUGINNAME;
-import nl.Steffion.SteffionsEngine.EW;
+import nl.Steffion.PLUGINNAME.SteffionsEngine.EW;
 
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;

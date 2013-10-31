@@ -1,6 +1,6 @@
 package nl.Steffion.PLUGINNAME;
 
-import nl.Steffion.SteffionsEngine.Managers.ConfigM;
+import nl.Steffion.PLUGINNAME.SteffionsEngine.Managers.ConfigM;
 
 public enum ConfigC {
 	/**
@@ -45,9 +45,9 @@ public enum ConfigC {
 	error_commandNotFound ("%TAG%ECouldn't find the command. Try %A/"
 			+ PLUGINNAME.pdfFile.getName()
 			+ " <help|h> [page number] %Efor more info.", W.messages),
-	error_commandNotEnabled ("%EThis command has been disabled! Ask your administrator if you belive this is an error.",
+	error_commandNotEnabled ("%TAG%EThis command has been disabled! Ask your administrator if you belive this is an error.",
 			W.messages),
-	error_notEnoughArguments ("%EYou're missing arguments, correct syntax: %A/%syntax%",
+	error_notEnoughArguments ("%TAG%EYou're missing arguments, correct syntax: %A%syntax%",
 			W.messages);
 
 	public Object value;
