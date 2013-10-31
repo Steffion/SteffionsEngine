@@ -23,6 +23,8 @@ public enum ConfigC {
 	chat_header ("&9", W.config),
 	chat_headerhigh ("%H_______.[ %A%header%%H ]._______", W.config),
 
+	metrics_enabled (true, W.config),
+
 	commandEnabled_info (true, W.config),
 	commandEnabled_help (true, W.config),
 	commandEnabled_reload (true, W.config),

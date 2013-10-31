@@ -2,6 +2,7 @@ package nl.Steffion.PLUGINNAME.SteffionsEngine;
 
 import nl.Steffion.PLUGINNAME.ConfigC;
 import nl.Steffion.PLUGINNAME.PLUGINNAME;
+import nl.Steffion.PLUGINNAME.W;
 import nl.Steffion.PLUGINNAME.SteffionsEngine.MCStats.Metrics;
 import nl.Steffion.PLUGINNAME.SteffionsEngine.Managers.ConfigM;
 import nl.Steffion.PLUGINNAME.SteffionsEngine.Managers.MessageM;
@@ -29,7 +30,8 @@ public class SteffionsEngine {
 	public static void onEnable(Plugin plugin) {
 		ConfigM.newFiles();
 
-		if (PLUGINNAME.metricsEnabled) {
+		if (PLUGINNAME.metricsEnabled
+				&& (Boolean) W.config.get(ConfigC.metrics_enabled)) {
 			try {
 				Metrics metrics = new Metrics(plugin);
 				metrics.start();
