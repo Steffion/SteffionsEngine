@@ -24,7 +24,7 @@ public class SteffionsEngine {
 	 * @author Steffion
 	 */
 
-	public static String engineVersion = "4.1.0";
+	public static String engineVersion = "4.1.1";
 	public static String engineAuthors = "Steffion";
 
 	public static void onEnable(Plugin plugin) {
