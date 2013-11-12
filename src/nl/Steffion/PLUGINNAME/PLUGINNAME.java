@@ -2,12 +2,14 @@ package nl.Steffion.PLUGINNAME;
 
 import nl.Steffion.PLUGINNAME.CommandsC.Commands;
 import nl.Steffion.PLUGINNAME.Commands.CMDnotfound;
+import nl.Steffion.PLUGINNAME.Serializables.LocationSerializable;
 import nl.Steffion.PLUGINNAME.SteffionsEngine.SteffionsEngine;
 import nl.Steffion.PLUGINNAME.SteffionsEngine.Managers.MessageM;
 import nl.Steffion.PLUGINNAME.SteffionsEngine.Managers.PermissionsM;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.serialization.ConfigurationSerialization;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.PluginDescriptionFile;
@@ -26,13 +28,20 @@ public class PLUGINNAME extends JavaPlugin implements Listener {
 	 * @author Steffion
 	 */
 
+	public static PLUGINNAME plugin;
 	public static PluginDescriptionFile pdfFile;
 
 	public static boolean metricsEnabled = false;
 
 	public void onEnable() {
+		plugin = this;
 		pdfFile = this.getDescription();
+
 		getServer().getPluginManager().registerEvents(this, this);
+
+		ConfigurationSerialization.registerClass(LocationSerializable.class,
+				"PLUGINNAMELocation");
+
 		SteffionsEngine.onEnable(this);
 
 		MessageM.sendFMessage(null, ConfigC.log_enabledPlugin, "name-"

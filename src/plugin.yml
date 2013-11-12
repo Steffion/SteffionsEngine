@@ -4,6 +4,8 @@ version: 1.0.0
 authors:
   - Steffion
 description: Description here.
+load: POSTWORLD
+softdepend: [Multiverse-Core, My Worlds]
 commands:
   PLUGINNAME:
     usage: /<command>
