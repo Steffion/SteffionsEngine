@@ -44,6 +44,7 @@ public enum ConfigC {
 
 	error_noPermission ("%TAG%EYou don't have the permissions to do that!",
 			W.messages),
+	error_onlyIngame ("%TAG%EThis is an only in-game command!", W.messages),
 	error_commandNotFound ("%TAG%ECouldn't find the command. Try %A/"
 			+ PLUGINNAME.pdfFile.getName()
 			+ " <help|h> [page number] %Efor more info.", W.messages),
